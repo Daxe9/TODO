@@ -34,4 +34,20 @@ export default {
                 throw new Error("Cannot update todo");
             });
     },
+    async createTodo(payload) {
+        return apiClient
+            .post("/", payload)
+            .then((res) => res.data)
+            .catch(() => {
+                throw new Error("Cannot add todo");
+            });
+    },
+    async deleteTodo(id) {
+        return apiClient
+            .delete(`/${id}`)
+            .then((res) => res.data)
+            .catch(() => {
+                throw new Error("Cannot delete todo");
+            });
+    },
 };
