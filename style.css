@@ -1,0 +1,97 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+    text-align: center;
+}
+
+.author {
+    display: inline;
+}
+
+.img-wrapper {
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin: 0 auto;
+    list-style: none;
+    cursor: pointer;
+}
+
+.todo {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2vh;
+    background-color: aquamarine;
+    border: 1px solid black;
+    border-radius: 3vh;
+}
+
+.todo-form {
+    margin: 0 auto;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-form div {
+    width: 100%;
+    margin-bottom: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.todo-form div input[type="text"] {
+    padding: 0.5em;
+}
+
+.done-true {
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.done-false {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+input[type="checkbox"] {
+    appearance: none;
+    width: 2vw;
+    height: 2vw;
+    border: 2px solid black;
+
+    border-radius: 0.5vw;
+}
+
+.todo-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.todo-content h4 {
+    margin: 1vh 0;
+}
+
+#homelink {
+    cursor: pointer;
+}
