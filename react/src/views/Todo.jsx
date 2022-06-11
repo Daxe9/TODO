@@ -1,4 +1,4 @@
-import { useState, Component } from "react";
+import { Component } from "react";
 import { useParams } from "react-router-dom";
 import todoService from "../../../todo-service";
 
@@ -25,6 +25,13 @@ class Todo extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         await todoService.updateTodo(this.state._id, this.state);
+    };
+
+    handleDelete = async () => {
+        await todoService.deleteTodo(this.state._id);
+
+        // cannot find a react way to do it
+        window.location.href = "/";
     };
 
     render() {
@@ -90,6 +97,9 @@ class Todo extends Component {
 
                     <button type="submit" onClick={this.handleSubmit}>
                         Update
+                    </button>
+                    <button type="button" onClick={this.handleDelete}>
+                        Delete
                     </button>
                 </form>
             );

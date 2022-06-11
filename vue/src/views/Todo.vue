@@ -1,8 +1,9 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import todoService from "../../../todo-service";
 const route = useRoute();
+const router = useRouter();
 const todo = ref(null);
 
 async function getTodo() {
@@ -16,6 +17,11 @@ function updateTodo() {
         todo.value._id,
         JSON.parse(JSON.stringify(todo.value))
     );
+}
+
+async function deleteTodo() {
+    await todoService.deleteTodo(todo.value._id);
+    await router.push("/");
 }
 </script>
 <template>
@@ -43,5 +49,6 @@ function updateTodo() {
         </div>
 
         <button type="submit" @click.prevent="updateTodo">Update</button>
+        <button type="button" @click="deleteTodo">Delete</button>
     </form>
 </template>

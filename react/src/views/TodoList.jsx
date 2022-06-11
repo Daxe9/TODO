@@ -1,4 +1,5 @@
 import todoService from "../../../todo-service";
+import plus from "../../../plus.png";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +11,14 @@ export default function TodoList() {
 
     return (
         <div>
-            <h1 className="title">TODO list</h1>
+            <h1 className="title">
+                TODO list&nbsp;
+                <img
+                    src={plus}
+                    alt="plus symbol"
+                    onClick={() => navigate("/create")}
+                />
+            </h1>
             <div className="todo-container">
                 <ul>
                     {todos.map((todo, i) => {

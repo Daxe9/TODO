@@ -2,6 +2,7 @@
 import { onMounted, ref } from "vue";
 import todoService from "../../../todo-service";
 import { useRouter } from "vue-router";
+import plus from "../../../plus.png";
 const todos = ref(null);
 const router = useRouter();
 
@@ -13,11 +14,18 @@ function goToTodo(id) {
     router.push(`/todo/${id}`);
 }
 
+function goToCreate() {
+    router.push("/create");
+}
+
 onMounted(getTodos);
 </script>
 <template>
     <div>
-        <h1 class="title">TODO list</h1>
+        <h1 class="title">
+            TODO list
+            <img :src="plus" @click="goToCreate" alt="plus symbol" />
+        </h1>
         <div class="todo-container">
             <ul>
                 <li

@@ -13,6 +13,11 @@ const routes = [
         component: () => import("../views/Todo.vue"),
     },
     {
+        path: "/create",
+        name: "Create",
+        component: () => import("../views/CreateTodo.vue"),
+    },
+    {
         path: "/:catchAll(.*)",
         name: "NotFound",
         beforeEnter: (to, from, next) => {

@@ -1,6 +1,13 @@
 import TodoList from "./views/TodoList";
 import Todo from "./views/Todo";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import CreateTodo from "./views/CreateTodo";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link,
+    Navigate,
+} from "react-router-dom";
 import logo from "./logo.svg";
 
 function App() {
@@ -20,6 +27,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<TodoList />} />
                 <Route path="/todo/:id" element={<Todo />} />
+                <Route path="/create" element={<CreateTodo />} />
+
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </Router>
     );
