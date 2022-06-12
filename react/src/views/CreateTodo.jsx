@@ -5,7 +5,7 @@ export default function CreateTodo() {
     const [todo, setTodo] = useState({
         content: "",
         author: "",
-        state: false,
+        state: false
     });
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
@@ -24,7 +24,7 @@ export default function CreateTodo() {
                     onChange={(e) => {
                         setTodo({
                             ...todo,
-                            content: e.target.value,
+                            content: e.target.value
                         });
                     }}
                 />
@@ -38,7 +38,7 @@ export default function CreateTodo() {
                     onChange={(e) => {
                         setTodo({
                             ...todo,
-                            author: e.target.value,
+                            author: e.target.value
                         });
                     }}
                 />
@@ -52,11 +52,11 @@ export default function CreateTodo() {
                     onChange={(e) => {
                         setTodo({
                             ...todo,
-                            state: e.target.checked,
+                            state: e.target.checked
                         });
                     }}
                     style={{
-                        backgroundColor: todo.state ? "green" : "red",
+                        backgroundColor: todo.state ? "green" : "red"
                     }}
                 />
             </div>

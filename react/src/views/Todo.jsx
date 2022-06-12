@@ -13,7 +13,7 @@ class Todo extends Component {
             _id: "",
             content: "",
             author: "",
-            state: false,
+            state: false
         };
     }
 
@@ -56,7 +56,7 @@ class Todo extends Component {
                             onChange={(e) => {
                                 this.setState({
                                     ...this.state,
-                                    content: e.target.value,
+                                    content: e.target.value
                                 });
                             }}
                         />
@@ -70,7 +70,7 @@ class Todo extends Component {
                             onChange={(e) => {
                                 this.setState({
                                     ...this.state,
-                                    author: e.target.value,
+                                    author: e.target.value
                                 });
                             }}
                         />
@@ -84,13 +84,13 @@ class Todo extends Component {
                             onChange={(e) => {
                                 this.setState({
                                     ...this.state,
-                                    state: e.target.checked,
+                                    state: e.target.checked
                                 });
                             }}
                             style={{
                                 backgroundColor: this.state.state
                                     ? "green"
-                                    : "red",
+                                    : "red"
                             }}
                         />
                     </div>

@@ -6,7 +6,7 @@ import {
     Routes,
     Route,
     Link,
-    Navigate,
+    Navigate
 } from "react-router-dom";
 import logo from "./logo.svg";
 

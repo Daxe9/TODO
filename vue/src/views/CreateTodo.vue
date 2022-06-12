@@ -7,7 +7,7 @@ const router = useRouter();
 const todo = reactive({
     content: "",
     state: false,
-    author: "",
+    author: ""
 });
 
 async function addTodo() {

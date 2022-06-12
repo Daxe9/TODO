@@ -4,7 +4,7 @@ import cors from "cors";
 const todoSchema = new mongoose.Schema({
     content: String,
     state: Boolean,
-    author: String,
+    author: String
 });
 
 const Todo = mongoose.model("Todo", todoSchema);
@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
     let todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
+        new: true
     });
     await todo.save();
     res.status(200).json(todo);
